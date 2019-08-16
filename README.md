@@ -23,10 +23,20 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+      you no longer have to pass props down from component to component - what React devs call “prop drilling”. We can now store data on a context object, and retrieve that data in the necessary components from the context object, not props!
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+      The difficulties of storing and efficiently performing logic on data within components becomes more and more apparent as the amount of data increases. Consequently, as components grow and deal with larger sets of data, the storing and transportation of state across the entire application increasingly becomes more and more cumbersome as well. Reducers offer one possible way to address this problem within the component. At the level of the application, an elegant combination of the Context API with reducers provides one possible way that React developers can manage global state.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+      Your application state is global, and your component state is local. Flux or a flux-like library like Redux, use what they call "stores" to hold application state. That means any component, anywhere in the app can access it (kind of like a database) so long as they hook into it.
+      Component state however, lives within that specific component. As such, it can only be updated within that component and passed down to its children via props.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+      Redux Thunk is a separate node package called redux-thunk. Since the Redux action -> reducer flow is synchronous, we will use Redux Thunk to make the flow asynchronous so we can make API calls from our action creators.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+      Redux. Redux is a small, light-weight state container for use when building JavaScript applications. Remember, Redux has nothing to do with React other than the fact that many developers use them together.
 
 ## Project Set Up
 
